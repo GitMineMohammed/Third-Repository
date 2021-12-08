@@ -1,6 +1,9 @@
 package pom.adactin;
 
 import baseclass.BaseClass_Cucumber;
+
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -82,17 +85,19 @@ public class Cucumber_POM_Adactin_PersonalDetails extends BaseClass_Cucumber {
 		return orderId;
 	}
 
-	public void personalDetailsPage(String firstName, String lastName, String address, String ccNumber, String ccType,
-			String ccExpMonth, String ccExpyear, String ccCVV) throws InterruptedException {
-
+	public void personalDetailsPage(String firstName, String lastName, String billingAddress, String ccNum, 
+			String ccType,String ccExpMonth, String ccExpYear, String cvvNum) throws InterruptedException {
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
 		sendKeys(getFirstname(), firstName);
 		sendKeys(getLastname(), lastName);
-		sendKeys(getAddress(), address);
-		sendKeys(getCcNum(), ccNumber);
+		sendKeys(getAddress(), billingAddress);
+		sendKeys(getCcNum(), ccNum);
 		selectByVisibleText(getCcType(), ccType);
 		selectByVisibleText(getCcExpMo(), ccExpMonth);
-		selectByVisibleText(getCcExpYr(), ccExpyear);
-		sendKeys(getCcCVV(), ccCVV);
+		selectByVisibleText(getCcExpYr(), ccExpYear);
+		sendKeys(getCcCVV(), cvvNum);
 
 		buttonClick(getBookNow());
 		getAttribute(getOrderId());

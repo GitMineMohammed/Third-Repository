@@ -1,5 +1,7 @@
 package pom.adactin;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -28,7 +30,7 @@ public class Cucumber_POM_Adactin_Booking_Confirmation extends BaseClass_Cucumbe
 	}
 
 	public void bookingConfirmationPage() throws InterruptedException {
-
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		buttonClick(getRadiobutton());
 		buttonClick(getContinueBooking());
 

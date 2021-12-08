@@ -1,6 +1,9 @@
 package pom.adactin;
 
 import baseclass.BaseClass_Cucumber;
+
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -78,14 +81,19 @@ public class Cucumber_POM_Adactin_Booking extends BaseClass_Cucumber {
 	public void bookingPage(String location, String hotel, String roomType, String roomNos, String checkIn,
 			String checkOut, String adultRoom, String childRoom) throws InterruptedException {
 
-		selectByVisibleText(getLocation(), location);
-		selectByVisibleText(getHotel(), hotel);
-		selectByVisibleText(getRoomType(), roomType);
-		selectByVisibleText(getRoomNos(), roomNos);
-		selectByVisibleText(getDatepickin(), checkIn);
-		selectByVisibleText(getDatepickout(), checkOut);
-		selectByVisibleText(getAdultroom(), adultRoom);
-		selectByVisibleText(getChildroom(), childRoom);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		selectByValue(getLocation(), location);
+		selectByValue(getHotel(), hotel);
+		selectByValue(getRoomType(), roomType);
+		selectByValue(getRoomNos(), roomNos);
+		
+		sendKeys(getDatepickin(), checkIn);
+		sendKeys(getDatepickout(), checkOut);
+		
+		selectByValue(getAdultroom(), adultRoom);
+		selectByValue(getChildroom(), childRoom);
+		
 		buttonClick(getSearch());
 
 	}

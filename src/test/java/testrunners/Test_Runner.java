@@ -10,9 +10,9 @@ import cucumber.api.junit.Cucumber;
 (features="E:\\Eclipse\\Cucumber\\src\\test\\resources\\Features\\Feature_Adactin.feature", 
 glue= {"stepdefinitions"},
 monochrome=true,
-tags= {"@loginPage"},
+tags= {"@E2EBooking"},
 dryRun=false,
-plugin= {"pretty","json:\\Eclipse\\Cucumber\\src\\test\\resources\\Reports\\Output.json"})
+plugin= {"pretty","html:\\Eclipse\\Cucumber\\src\\test\\resources\\Reports\\Output.html"})
 	
 public class Test_Runner {
 	
