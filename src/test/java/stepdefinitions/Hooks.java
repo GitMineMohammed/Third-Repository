@@ -19,7 +19,7 @@ public class Hooks extends BaseClass_Cucumber {
 	public void initialization() {
 
 		chromeLaunch("http://adactinhotelapp.com/HotelAppBuild2/");
-		System.out.println("Launching browser from Hooks class");
+		System.out.println("Launching browser from Hooks_For_Datatable class");
 		System.out.println(
 				"----------------------------------------Scenario Started----------------------------------------");
 	}
@@ -39,7 +39,7 @@ public class Hooks extends BaseClass_Cucumber {
 	@After("@bookingPage")
 	public void tearDown() {
 		driver.close();
-		System.out.println("Closing browser from Hooks class");
+		System.out.println("Closing browser from Hooks_For_Datatable class");
 
 	}
 

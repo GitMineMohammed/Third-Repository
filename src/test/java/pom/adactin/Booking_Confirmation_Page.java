@@ -8,9 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import baseclass.BaseClass_Cucumber;
 
-public class Cucumber_POM_Adactin_Booking_Confirmation extends BaseClass_Cucumber {
+public class Booking_Confirmation_Page extends BaseClass_Cucumber {
 
-	public Cucumber_POM_Adactin_Booking_Confirmation() {
+	public Booking_Confirmation_Page() {
 
 		PageFactory.initElements(driver, this);
 	}

@@ -1,4 +1,3 @@
-
 package stepdefinitions;
 
 import org.junit.Assert;
@@ -9,19 +8,18 @@ import baseclass.BaseClass_Cucumber;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import pom.adactin.Cucumber_POM_Adactin_Booking;
-import pom.adactin.Cucumber_POM_Adactin_Booking_Confirmation;
-import pom.adactin.Cucumber_POM_Adactin_Login;
-import pom.adactin.Cucumber_POM_Adactin_PersonalDetails;
+import pom.adactin.Booking_Page;
+import pom.adactin.Booking_Confirmation_Page;
+import pom.adactin.Login_Page;
+import pom.adactin.Personal_Details_Page;
 
 public class Step_Definition_Adactin extends BaseClass_Cucumber {
 
-	
 	public static WebDriver driver;
 
 	@Given("User should be in login page")
 	public void user_should_be_in_login_page() throws InterruptedException {
-		
+
 		WebElement txtWelcome = locatorBy("text", "//*[text()='Welcome to Adactin Group of Hotels']");
 		String text = txtWelcome.getText();
 		System.out.println("Default text shown in Loginpage is : " + text);
@@ -31,8 +29,8 @@ public class Step_Definition_Adactin extends BaseClass_Cucumber {
 
 	@When("User should enter {string},{string} and click Login button")
 	public void user_should_enter_and_click_Login_button(String userName, String passWord) throws InterruptedException {
-		
-		Cucumber_POM_Adactin_Login a = new Cucumber_POM_Adactin_Login();
+
+		Login_Page a = new Login_Page();
 		a.loginPage(userName, passWord);
 	}
 
@@ -61,13 +59,13 @@ public class Step_Definition_Adactin extends BaseClass_Cucumber {
 	public void user_should_enter_and_click_Search_button(String location, String hotel, String roomType,
 			String roomNos, String checkIn, String checkOut, String adultRoom, String childRoom)
 			throws InterruptedException {
-				Cucumber_POM_Adactin_Booking b = new Cucumber_POM_Adactin_Booking();
+		Booking_Page b = new Booking_Page();
 		b.bookingPage(location, hotel, roomType, roomNos, checkIn, checkOut, adultRoom, childRoom);
 	}
 
 	@When("User should be redirected to Select Hotel Page")
 	public void user_should_be_redirected_to_Select_Hotel_Page() throws InterruptedException {
-		
+
 		WebElement txtSelectHotel = locatorBy("text", "//*[text()='Select Hotel ']");
 		String text = txtSelectHotel.getText();
 		System.out.println("Default text shown in Hotel Confirmation page is : " + text);
@@ -77,17 +75,17 @@ public class Step_Definition_Adactin extends BaseClass_Cucumber {
 
 	@When("User should select existing hotel and click Continue button")
 	public void user_should_select_existing_hotel_and_click_Continue_button() throws InterruptedException {
-		
-		Cucumber_POM_Adactin_Booking_Confirmation c = new Cucumber_POM_Adactin_Booking_Confirmation();
+
+		Booking_Confirmation_Page c = new Booking_Confirmation_Page();
 		c.bookingConfirmationPage();
 	}
 
 	@Then("User should be redirected to Book A Hotel Page")
 	public void user_should_be_redirected_to_Book_A_Hotel_Page() throws InterruptedException {
-		
+
 		WebElement txtBookAHotel = locatorBy("text", "//*[text()='Book A Hotel ']");
 		String text = txtBookAHotel.getText();
-		System.out.println("Default text shown in Booking page is : " + text);
+		System.out.println("Default text shown in Booking_Page page is : " + text);
 		Assert.assertEquals(text, "Book A Hotel");
 		System.out.println("Entered into \"Book A Hotel Page\"");
 	}
@@ -95,26 +93,26 @@ public class Step_Definition_Adactin extends BaseClass_Cucumber {
 
 	@Given("User should be in final booking page")
 	public void user_should_be_in_final_booking_page() throws InterruptedException {
-		
+
 		WebElement txtBookAHotel = locatorBy("text", "//*[text()='Book A Hotel ']");
 		String text = txtBookAHotel.getText();
-		System.out.println("Default text shown in Booking page is : " + text);
+		System.out.println("Default text shown in Booking_Page page is : " + text);
 		Assert.assertEquals(text, "Book A Hotel");
-		System.out.println("\"Final Booking page\" Validated");
+		System.out.println("\"Final Booking_Page page\" Validated");
 	}
 
 	@When("User should enter {string},{string},{string},{string},{string},{string},{string},{string} and click Book_Now button")
 	public void user_should_enter_and_click_Book_Now_button(String firstName, String lastName, String billingAddress,
 			String ccNum, String ccType, String ccExpMonth, String ccExpYear, String cvvNum)
 			throws InterruptedException {
-		
-		Cucumber_POM_Adactin_PersonalDetails d = new Cucumber_POM_Adactin_PersonalDetails();
+
+		Personal_Details_Page d = new Personal_Details_Page();
 		d.personalDetailsPage(firstName, lastName, billingAddress, ccNum, ccType, ccExpMonth, ccExpYear, cvvNum);
 	}
 
 	@When("User should be redirected to Booking Confirmation Page")
 	public void user_should_be_redirected_to_Booking_Confirmation_Page() throws InterruptedException {
-		
+
 		WebElement txtBookingConfirmation = locatorBy("text", "//*[text()='Booking Confirmation ']");
 		String text = txtBookingConfirmation.getText();
 		System.out.println("Default text shown in Booking Confirmation page is : " + text);
@@ -124,7 +122,7 @@ public class Step_Definition_Adactin extends BaseClass_Cucumber {
 
 	@Then("User should get OrderId of Booked Hotel")
 	public void user_should_get_OrderId_of_Booked_Hotel() throws InterruptedException {
-		
+
 		WebElement txtOrderId = locatorBy("id", "order_no");
 		String attribute = txtOrderId.getAttribute("value");
 		System.out.println("Value of OrderId is : " + attribute);

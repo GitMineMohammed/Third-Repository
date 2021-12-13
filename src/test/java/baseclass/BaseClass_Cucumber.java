@@ -2,6 +2,7 @@ package baseclass;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -331,7 +332,7 @@ public class BaseClass_Cucumber {
 	}
 
 	// ------------------------------------------------------------------------------------------------------------------------------
-	public static void ReadWriteSameExcel() throws Throwable {// 31
+	public static void readWriteSameExcel() throws Throwable {// 31
 
 		String fileName = ("Read Excel File.xlsx");
 		String readingSheet = ("Test Sheet");
@@ -380,7 +381,7 @@ public class BaseClass_Cucumber {
 	}
 
 	// ------------------------------------------------------------------------------------------------------------------------------
-	public static void ReadWriteDifferentExcel() throws IOException {// 32
+	public static void readWriteDifferentExcel() throws IOException {// 32
 
 		String readingFile = ("Read Excel File.xlsx");
 		String writingFile = ("Write Excel File.xlsx");
@@ -434,9 +435,9 @@ public class BaseClass_Cucumber {
 	}
 
 	// ------------------------------------------------------------------------------------------------------------------------------
-	public static String readExcelToWebPage(String path, String sheetName, int rowNum, int cellNum) throws IOException {// 33
+	public static String readExcelToWebPage(String pathWithFileName, String sheetName, int rowNum, int cellNum) throws IOException {// 33
 
-		File file = new File(path);
+		File file = new File(pathWithFileName);
 		FileInputStream input = new FileInputStream(file);
 		Workbook workbook = new XSSFWorkbook(input);
 		Sheet readSheet = workbook.getSheet(sheetName);
@@ -458,15 +459,52 @@ public class BaseClass_Cucumber {
 
 		else {
 			double numericCellValue = cell.getNumericCellValue();
-
 			long l = (long) numericCellValue;
 			String valueOf = String.valueOf(l);
 			return valueOf;
 		}
 	}
-
+	
 	// ------------------------------------------------------------------------------------------------------------------------------
-	public static void enterText(WebElement element, String text) {// 34
+	public static String readExcelToWebPage1 (String pathWithFileName, String sheetName) throws IOException { // 33
+
+		File file = new File(pathWithFileName);
+		FileInputStream input = new FileInputStream(file);
+		Workbook workbook = new XSSFWorkbook(input);
+		Sheet readSheet = workbook.getSheet(sheetName);
+
+		for (int i = 0; i < readSheet.getPhysicalNumberOfRows(); i++) {
+			Row row = readSheet.getRow(i);
+
+			for (int j = 0; j < row.getPhysicalNumberOfCells(); j++) {
+				Cell cell = row.getCell(j);
+				int cellType = cell.getCellType();
+
+				if (cellType == 1) {
+					String stringCellValue = cell.getStringCellValue();
+					return stringCellValue;
+				}
+
+				else if (DateUtil.isCellDateFormatted(cell)) {
+					Date dateCellValue = cell.getDateCellValue();
+					SimpleDateFormat simpleDate = new SimpleDateFormat("dd/MM/yyyy");
+					String dateFormat = simpleDate.format(dateCellValue);
+					return dateFormat;
+				}
+
+				else {
+					double numericCellValue = cell.getNumericCellValue();
+					long l = (long) numericCellValue;
+					String valueOf = String.valueOf(l);
+					return valueOf;
+				}
+			}
+		}
+		return null;
+	}
+	
+	// ------------------------------------------------------------------------------------------------------------------------------
+	public void enterText(WebElement element, String text) {// 34
 		element.sendKeys(text);
 	}
 

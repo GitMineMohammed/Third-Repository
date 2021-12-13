@@ -8,9 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Cucumber_POM_Adactin_Booking extends BaseClass_Cucumber {
+public class Booking_Page extends BaseClass_Cucumber {
 
-	public Cucumber_POM_Adactin_Booking() {
+	public Booking_Page() {
 
 		PageFactory.initElements(driver, this);
 	}

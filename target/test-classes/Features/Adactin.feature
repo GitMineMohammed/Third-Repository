@@ -1,5 +1,5 @@
-@E2EBooking
-Feature: Verification adactin booking
+@E2EBooking 
+Feature: Verification of Adactin booking
 
   @loginPage
   Scenario Outline: Verification of Login page

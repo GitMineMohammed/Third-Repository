@@ -1,6 +1,6 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("E:/Eclipse/Cucumber/src/test/resources/Features/Feature_Adactin.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("E:/Eclipse/Cucumber/src/test/resources/Features/Adactin.feature");
 formatter.feature({
-  "name": "Verification adactin booking",
+  "name": "Verification of Adactin booking",
   "description": "",
   "keyword": "Feature",
   "tags": [
