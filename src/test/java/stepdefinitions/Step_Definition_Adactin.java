@@ -1,5 +1,8 @@
 package stepdefinitions;
 
+import java.io.IOException;
+import java.util.Map;
+
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,8 +11,8 @@ import baseclass.BaseClass_Cucumber;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import pom.adactin.Booking_Page;
 import pom.adactin.Booking_Confirmation_Page;
+import pom.adactin.Booking_Page;
 import pom.adactin.Login_Page;
 import pom.adactin.Personal_Details_Page;
 
@@ -27,11 +30,18 @@ public class Step_Definition_Adactin extends BaseClass_Cucumber {
 		System.out.println("Loginpage Validated");
 	}
 
-	@When("User should enter {string},{string} and click Login button")
-	public void user_should_enter_and_click_Login_button(String userName, String passWord) throws InterruptedException {
+	@When("User should enter credentials and click Login button")
+	public void user_should_enter_credentials_and_click_Login_button(io.cucumber.datatable.DataTable dataTable)
+			throws InterruptedException {
+
+		Map<String, String> mapRef = dataTable.asMap(String.class, String.class);
+		String s1 = mapRef.get("userName");
+		String s2 = mapRef.get("passWord");
 
 		Login_Page a = new Login_Page();
-		a.loginPage(userName, passWord);
+		sendKeys(a.getUsername(), s1);
+		sendKeys(a.getPassword(), s2);
+		buttonClick(a.getLogin());
 	}
 
 	@Then("User should be redirected to Home page")
@@ -55,12 +65,33 @@ public class Step_Definition_Adactin extends BaseClass_Cucumber {
 		System.out.println("\"Search Hotelpage\" Validated");
 	}
 
-	@When("User should enter {string},{string},{string},{string},{string},{string},{string},{string} and click Search button")
-	public void user_should_enter_and_click_Search_button(String location, String hotel, String roomType,
-			String roomNos, String checkIn, String checkOut, String adultRoom, String childRoom)
-			throws InterruptedException {
+	@When("User should enter location, hotel, roomType, roomNos, checkIn, checkOut, adultRoom, childRoom and click Search button")
+	public void user_should_enter_location_hotel_roomType_roomNos_checkIn_checkOut_adultRoom_childRoom_and_click_Search_button() throws IOException, InterruptedException {
+
+		String path = "C:\\Users\\Bismillah\\Desktop\\Read";
+		String fileName = "Test Data - Input - Adactin";
+		String sheetName = "Single Test";
+
+		String location = readExcelToWebPage(path, fileName, sheetName, 1, 0);
+		String hotel = readExcelToWebPage(path, fileName, sheetName, 1, 1);
+		String roomType = readExcelToWebPage(path, fileName, sheetName, 1, 2);
+		String roomNos = readExcelToWebPage(path, fileName, sheetName, 1, 3);
+		String checkIn = readExcelToWebPage(path, fileName, sheetName, 1, 4);
+		String checkOut = readExcelToWebPage(path, fileName, sheetName, 1, 5);
+		String adultRoom = readExcelToWebPage(path, fileName, sheetName, 1, 6);
+		String childRoom = readExcelToWebPage(path, fileName, sheetName, 1, 7);
+
 		Booking_Page b = new Booking_Page();
-		b.bookingPage(location, hotel, roomType, roomNos, checkIn, checkOut, adultRoom, childRoom);
+		sendKeys(b.getLocation(), location);
+		sendKeys(b.getHotel(), hotel);
+		sendKeys(b.getRoomType(), roomType);
+		sendKeys(b.getRoomNos(), roomNos);
+		sendKeys(b.getDatepickin(), checkIn);
+		sendKeys(b.getDatepickout(), checkOut);
+		sendKeys(b.getAdultroom(), adultRoom);
+		sendKeys(b.getChildroom(), childRoom);
+		buttonClick(b.getSearch());
+
 	}
 
 	@When("User should be redirected to Select Hotel Page")

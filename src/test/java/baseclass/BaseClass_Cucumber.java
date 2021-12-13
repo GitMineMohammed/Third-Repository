@@ -2,7 +2,6 @@ package baseclass;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -332,21 +331,17 @@ public class BaseClass_Cucumber {
 	}
 
 	// ------------------------------------------------------------------------------------------------------------------------------
-	public static void readWriteSameExcel() throws Throwable {// 31
+	public static void readWriteSameExcel(String path,String fileName, String readSheet,String writeSheet) throws Throwable {// 31
 
-		String fileName = ("Read Excel File.xlsx");
-		String readingSheet = ("Test Sheet");
-		String writingSheet = ("Written Sheet");
-
-		File file = new File("C:\\Users\\Bismillah\\Desktop\\Test Read\\" + fileName);
+		File file = new File(path+"\\"+fileName+".xlsx");
 		FileInputStream input = new FileInputStream(file);
 		Workbook w = new XSSFWorkbook(input);
-		Sheet readSheet = w.getSheet(readingSheet);
-		Sheet createSheet = w.createSheet(writingSheet);
+		Sheet sheetRead = w.getSheet(readSheet);
+		Sheet sheetCreate = w.createSheet(writeSheet);
 
-		for (int i = 0; i < readSheet.getPhysicalNumberOfRows(); i++) {
-			Row row = readSheet.getRow(i);
-			Row createRow = createSheet.createRow(i);
+		for (int i = 0; i < sheetRead.getPhysicalNumberOfRows(); i++) {
+			Row row = sheetRead.getRow(i);
+			Row createRow = sheetCreate.createRow(i);
 
 			for (int j = 0; j < row.getPhysicalNumberOfCells(); j++) {
 				Cell getCell = row.getCell(j);
@@ -381,26 +376,22 @@ public class BaseClass_Cucumber {
 	}
 
 	// ------------------------------------------------------------------------------------------------------------------------------
-	public static void readWriteDifferentExcel() throws IOException {// 32
+	public static void readWriteDifferentExcel(String readPath,String readFile, String readSheet,
+			String writePath,String writeFile, String writeSheet) throws IOException {// 32
 
-		String readingFile = ("Read Excel File.xlsx");
-		String writingFile = ("Write Excel File.xlsx");
-		String readingSheet = ("Test Sheet");
-		String writingSheet = ("Written Sheet");
-
-		File fileRead = new File("C:\\Users\\Bismillah\\Desktop\\Test Read\\" + readingFile);
+		File fileRead = new File(readPath+"\\"+readFile+".xlsx");
 		FileInputStream input = new FileInputStream(fileRead);
 		Workbook readWorkbook = new XSSFWorkbook(input);
-		Sheet readSheet = readWorkbook.getSheet(readingSheet);
+		Sheet sheetRead = readWorkbook.getSheet(readSheet);
 
-		File fileWrite = new File("C:\\Users\\Bismillah\\Desktop\\Test Write\\" + writingFile);
+		File fileWrite = new File(writePath+"\\"+writeFile+".xlsx");
 		FileOutputStream output = new FileOutputStream(fileWrite);
 		Workbook writeWorkbook = new XSSFWorkbook();
-		Sheet writeSheet = writeWorkbook.createSheet(writingSheet);
+		Sheet sheetWrite = writeWorkbook.createSheet(writeSheet);
 
-		for (int i = 0; i < readSheet.getPhysicalNumberOfRows(); i++) {
-			Row row = readSheet.getRow(i);
-			Row createRow = writeSheet.createRow(i);
+		for (int i = 0; i < sheetRead.getPhysicalNumberOfRows(); i++) {
+			Row row = sheetRead.getRow(i);
+			Row createRow = sheetWrite.createRow(i);
 
 			for (int j = 0; j < row.getPhysicalNumberOfCells(); j++) {
 				Cell getCell = row.getCell(j);
@@ -435,13 +426,13 @@ public class BaseClass_Cucumber {
 	}
 
 	// ------------------------------------------------------------------------------------------------------------------------------
-	public static String readExcelToWebPage(String pathWithFileName, String sheetName, int rowNum, int cellNum) throws IOException {// 33
+	public static String readExcelToWebPage(String readPath,String readFile, String readSheet, int rowNum, int cellNum) throws IOException {// 33
 
-		File file = new File(pathWithFileName);
+		File file = new File(readPath+"\\"+readFile+".xlsx");
 		FileInputStream input = new FileInputStream(file);
 		Workbook workbook = new XSSFWorkbook(input);
-		Sheet readSheet = workbook.getSheet(sheetName);
-		Row row = readSheet.getRow(rowNum);
+		Sheet sheetRead = workbook.getSheet(readSheet);
+		Row row = sheetRead.getRow(rowNum);
 		Cell cell = row.getCell(cellNum);
 		int cellType = cell.getCellType();
 
@@ -463,44 +454,6 @@ public class BaseClass_Cucumber {
 			String valueOf = String.valueOf(l);
 			return valueOf;
 		}
-	}
-	
-	// ------------------------------------------------------------------------------------------------------------------------------
-	public static String readExcelToWebPage1 (String pathWithFileName, String sheetName) throws IOException { // 33
-
-		File file = new File(pathWithFileName);
-		FileInputStream input = new FileInputStream(file);
-		Workbook workbook = new XSSFWorkbook(input);
-		Sheet readSheet = workbook.getSheet(sheetName);
-
-		for (int i = 0; i < readSheet.getPhysicalNumberOfRows(); i++) {
-			Row row = readSheet.getRow(i);
-
-			for (int j = 0; j < row.getPhysicalNumberOfCells(); j++) {
-				Cell cell = row.getCell(j);
-				int cellType = cell.getCellType();
-
-				if (cellType == 1) {
-					String stringCellValue = cell.getStringCellValue();
-					return stringCellValue;
-				}
-
-				else if (DateUtil.isCellDateFormatted(cell)) {
-					Date dateCellValue = cell.getDateCellValue();
-					SimpleDateFormat simpleDate = new SimpleDateFormat("dd/MM/yyyy");
-					String dateFormat = simpleDate.format(dateCellValue);
-					return dateFormat;
-				}
-
-				else {
-					double numericCellValue = cell.getNumericCellValue();
-					long l = (long) numericCellValue;
-					String valueOf = String.valueOf(l);
-					return valueOf;
-				}
-			}
-		}
-		return null;
 	}
 	
 	// ------------------------------------------------------------------------------------------------------------------------------

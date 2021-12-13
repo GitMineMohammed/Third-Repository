@@ -1,12 +1,12 @@
 [
   {
-    "line": 2,
+    "line": 3,
     "elements": [
       {
         "before": [
           {
             "result": {
-              "duration": 1611378,
+              "duration": 1092667,
               "status": "passed"
             },
             "match": {
@@ -15,7 +15,7 @@
           },
           {
             "result": {
-              "duration": 10253559879,
+              "duration": 11343055263,
               "status": "passed"
             },
             "match": {
@@ -23,14 +23,14 @@
             }
           }
         ],
-        "line": 12,
+        "line": 6,
         "name": "Verification of Login page",
         "description": "",
-        "id": "verification-of-adactin-booking;verification-of-login-page;;2",
+        "id": "verification-of-adactin-booking;verification-of-login-page",
         "after": [
           {
             "result": {
-              "duration": 396489,
+              "duration": 208756,
               "status": "passed"
             },
             "match": {
@@ -39,14 +39,14 @@
           }
         ],
         "type": "scenario",
-        "keyword": "Scenario Outline",
+        "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 116421081,
+              "duration": 88338811,
               "status": "passed"
             },
-            "line": 6,
+            "line": 7,
             "name": "User should be in login page",
             "match": {
               "location": "Step_Definition_Adactin.user_should_be_in_login_page()"
@@ -55,32 +55,36 @@
           },
           {
             "result": {
-              "duration": 3854538845,
+              "duration": 3257902681,
               "status": "passed"
             },
-            "line": 7,
-            "name": "User should enter \"MyNewIdForTesting\",\"Mohammed@1234\" and click Login button",
+            "line": 8,
+            "name": "User should enter credentials and click Login button",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"MyNewIdForTesting\"",
-                  "offset": 18
-                },
-                {
-                  "val": "\"Mohammed@1234\"",
-                  "offset": 38
-                }
-              ],
-              "location": "Step_Definition_Adactin.user_should_enter_and_click_Login_button(String,String)"
+              "location": "Step_Definition_Adactin.user_should_enter_credentials_and_click_Login_button(DataTable)"
             },
+            "rows": [
+              {
+                "cells": [
+                  "userName",
+                  "MyNewIdForTesting"
+                ]
+              },
+              {
+                "cells": [
+                  "passWord",
+                  "Mohammed@1234"
+                ]
+              }
+            ],
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 114378503,
+              "duration": 73790454,
               "status": "passed"
             },
-            "line": 8,
+            "line": 11,
             "name": "User should be redirected to Home page",
             "match": {
               "location": "Step_Definition_Adactin.user_should_be_redirected_to_Home_page()"
@@ -101,7 +105,7 @@
         "before": [
           {
             "result": {
-              "duration": 116844,
+              "duration": 80667,
               "status": "passed"
             },
             "match": {
@@ -109,14 +113,14 @@
             }
           }
         ],
-        "line": 24,
+        "line": 14,
         "name": "Verification of Search Hotel page",
         "description": "",
-        "id": "verification-of-adactin-booking;verification-of-search-hotel-page;;2",
+        "id": "verification-of-adactin-booking;verification-of-search-hotel-page",
         "after": [
           {
             "result": {
-              "duration": 163778,
+              "duration": 93377,
               "status": "passed"
             },
             "match": {
@@ -125,14 +129,14 @@
           }
         ],
         "type": "scenario",
-        "keyword": "Scenario Outline",
+        "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 117153438,
+              "duration": 62235075,
               "status": "passed"
             },
-            "line": 16,
+            "line": 15,
             "name": "User should be in Search Hotel page",
             "match": {
               "location": "Step_Definition_Adactin.user_should_be_in_Search_Hotel_page()"
@@ -141,56 +145,22 @@
           },
           {
             "result": {
-              "duration": 4382521312,
+              "duration": 10383593096,
               "status": "passed"
             },
-            "line": 17,
-            "name": "User should enter \"Paris\",\"Hotel Sunshine\",\"Super Deluxe\",\"2\",\"10/12/2021\",\"20/12/2021\",\"4\",\"4\" and click Search button",
+            "line": 16,
+            "name": "User should enter location, hotel, roomType, roomNos, checkIn, checkOut, adultRoom, childRoom and click Search button",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"Paris\"",
-                  "offset": 18
-                },
-                {
-                  "val": "\"Hotel Sunshine\"",
-                  "offset": 26
-                },
-                {
-                  "val": "\"Super Deluxe\"",
-                  "offset": 43
-                },
-                {
-                  "val": "\"2\"",
-                  "offset": 58
-                },
-                {
-                  "val": "\"10/12/2021\"",
-                  "offset": 62
-                },
-                {
-                  "val": "\"20/12/2021\"",
-                  "offset": 75
-                },
-                {
-                  "val": "\"4\"",
-                  "offset": 88
-                },
-                {
-                  "val": "\"4\"",
-                  "offset": 92
-                }
-              ],
-              "location": "Step_Definition_Adactin.user_should_enter_and_click_Search_button(String,String,String,String,String,String,String,String)"
+              "location": "Step_Definition_Adactin.user_should_enter_location_hotel_roomType_roomNos_checkIn_checkOut_adultRoom_childRoom_and_click_Search_button()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 81598010,
+              "duration": 65725741,
               "status": "passed"
             },
-            "line": 18,
+            "line": 17,
             "name": "User should be redirected to Select Hotel Page",
             "match": {
               "location": "Step_Definition_Adactin.user_should_be_redirected_to_Select_Hotel_Page()"
@@ -199,10 +169,10 @@
           },
           {
             "result": {
-              "duration": 2440733110,
+              "duration": 2197187701,
               "status": "passed"
             },
-            "line": 19,
+            "line": 18,
             "name": "User should select existing hotel and click Continue button",
             "match": {
               "location": "Step_Definition_Adactin.user_should_select_existing_hotel_and_click_Continue_button()"
@@ -211,10 +181,10 @@
           },
           {
             "result": {
-              "duration": 84082544,
+              "duration": 68769076,
               "status": "passed"
             },
-            "line": 20,
+            "line": 19,
             "name": "User should be redirected to Book A Hotel Page",
             "match": {
               "location": "Step_Definition_Adactin.user_should_be_redirected_to_Book_A_Hotel_Page()"
@@ -235,7 +205,7 @@
         "before": [
           {
             "result": {
-              "duration": 75289,
+              "duration": 53778,
               "status": "passed"
             },
             "match": {
@@ -243,14 +213,14 @@
             }
           }
         ],
-        "line": 35,
+        "line": 30,
         "name": "Verification of final Booking page",
         "description": "",
         "id": "verification-of-adactin-booking;verification-of-final-booking-page;;2",
         "after": [
           {
             "result": {
-              "duration": 89467,
+              "duration": 83111,
               "status": "passed"
             },
             "match": {
@@ -259,7 +229,7 @@
           },
           {
             "result": {
-              "duration": 4201186044,
+              "duration": 4206050001,
               "status": "passed"
             },
             "match": {
@@ -272,10 +242,10 @@
         "steps": [
           {
             "result": {
-              "duration": 52922717,
+              "duration": 47727784,
               "status": "passed"
             },
-            "line": 28,
+            "line": 23,
             "name": "User should be in final booking page",
             "match": {
               "location": "Step_Definition_Adactin.user_should_be_in_final_booking_page()"
@@ -284,10 +254,10 @@
           },
           {
             "result": {
-              "duration": 8834640855,
+              "duration": 8564317532,
               "status": "passed"
             },
-            "line": 29,
+            "line": 24,
             "name": "User should enter \"UserFirstName\",\"UserLastName\",\"UserAddress\",\"1234567890123456\",\"VISA\",\"January\",\"2022\",\"123\" and click Book_Now button",
             "match": {
               "arguments": [
@@ -330,10 +300,10 @@
           },
           {
             "result": {
-              "duration": 58029652,
+              "duration": 63241208,
               "status": "passed"
             },
-            "line": 30,
+            "line": 25,
             "name": "User should be redirected to Booking Confirmation Page",
             "match": {
               "location": "Step_Definition_Adactin.user_should_be_redirected_to_Booking_Confirmation_Page()"
@@ -342,10 +312,10 @@
           },
           {
             "result": {
-              "duration": 51460451,
+              "duration": 29456538,
               "status": "passed"
             },
-            "line": 31,
+            "line": 26,
             "name": "User should get OrderId of Booked Hotel",
             "match": {
               "location": "Step_Definition_Adactin.user_should_get_OrderId_of_Booked_Hotel()"
@@ -373,7 +343,7 @@
         "name": "@E2EBooking",
         "type": "Tag",
         "location": {
-          "line": 1,
+          "line": 2,
           "column": 1
         }
       }
