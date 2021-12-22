@@ -100,7 +100,7 @@ public class Step_Definition_Adactin extends BaseClass_Cucumber {
 		WebElement txtSelectHotel = locatorBy("text", "//*[text()='Select Hotel ']");
 		String text = txtSelectHotel.getText();
 		System.out.println("Default text shown in Hotel Confirmation page is : " + text);
-		Assert.assertEquals(text, "Select Hotel");
+		Assert.assertEquals(text, "Select Hotel"); //change the space here only
 		System.out.println("Entered into \"Select Hotel page\"");
 	}
 

@@ -74,7 +74,7 @@ $(document).ready(function() {
   <tbody>
     <tr class="info">
       <td>Adactin Automation With Customized Report</td>
-      <td>13 Dec 2021, 22:08</td>
+      <td>14 Dec 2021, 11:59</td>
     </tr>
   </tbody>
 </table>
@@ -127,19 +127,19 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">@searchHotelPage</td>
-          <td      class="passed"    >5</td>
-          <td >0</td>
-          <td >0</td>
+          <td      class="passed"    >2</td>
+          <td      class="failed"    >1</td>
+          <td     class="skipped"   >2</td>
           <td >0</td>
           <td >0</td>
           <td class="total">5</td>
 
-          <td  class="passed"    >1</td>
           <td >0</td>
+          <td  class="failed"    >1</td>
           <td class="total">1</td>
 
-          <td class="duration" data-value="12777510689">12.777</td>
-          <td class="passed">Passed</td>
+          <td class="duration" data-value="9145394317">9.145</td>
+          <td class="failed">Failed</td>
         </tr>
         </tbody>
 
@@ -182,12 +182,12 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">12.777</span>
+  <span class="lead-duration duration">9.145</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Scenario</span>
   <span class="name">Verification of Search Hotel page</span>
 
@@ -198,7 +198,7 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-1" class="collapse collapsable-details ">
+  <div id="element-1" class="collapse collapsable-details  in ">
 
 
   <div class="inner-level hooks-element-before">
@@ -237,9 +237,9 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-3">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-3">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -249,7 +249,7 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-3" class="inner-level collapse collapsable-details ">
+  <div id="steps-3" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
@@ -257,7 +257,7 @@ $(document).ready(function() {
   <span class="keyword indention">Given</span>
   <span class="name">User should be in Search Hotel page</span>
 
-  <span class="lead-duration duration">0.062</span>
+  <span class="lead-duration duration">0.058</span>
 
 </div>
 
@@ -284,7 +284,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">User should enter location, hotel, roomType, roomNos, checkIn, checkOut, adultRoom, childRoom and click Search button</span>
 
-  <span class="lead-duration duration">10.383</span>
+  <span class="lead-duration duration">9.010</span>
 
 </div>
 
@@ -307,11 +307,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And failed">
   <span class="keyword indention">And</span>
   <span class="name">User should be redirected to Select Hotel Page</span>
 
-  <span class="lead-duration duration">0.065</span>
+  <span class="lead-duration duration">0.075</span>
 
 </div>
 
@@ -319,6 +319,22 @@ $(document).ready(function() {
 
 
 
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
+          <a>org.junit.ComparisonFailure:</a>
+      </div>
+      <div id="msg-4" class="collapse collapsable-details  in ">
+        <pre>org.junit.ComparisonFailure: expected:&lt;Select Hotel[]&gt; but was:&lt;Select Hotel[ ]&gt;
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at stepdefinitions.Step_Definition_Adactin.user_should_be_redirected_to_Select_Hotel_Page(Step_Definition_Adactin.java:103)
+	at &#10045;.User should be redirected to Select Hotel Page(E:/Eclipse/Cucumber/src/test/resources/Features/Adactin.feature:17)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -334,11 +350,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">User should select existing hotel and click Continue button</span>
 
-  <span class="lead-duration duration">2.197</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -361,11 +377,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">User should be redirected to Book A Hotel Page</span>
 
-  <span class="lead-duration duration">0.068</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -392,7 +408,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-4">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-5">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -404,13 +420,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-4" class="inner-level collapse collapsable-details ">
+    <div id="after-5" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">Hooks.after(Scenario)</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.489</span>
 
           </div>
 
@@ -419,6 +435,21 @@ $(document).ready(function() {
 
 
 
+  <div class="embeddings inner-level">
+  <div class="embedding indention">
+    <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
+      <a>Attachment 1 (png)</a>
+      <a href="embeddings/embedding_574357864.png" download target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-6" class="collapse collapsable-details ">
+      <div class="embedding-content">
+        <img src="embeddings/embedding_574357864.png">
+      </div>
+    </div>
+  </div>
+  </div>
 
         </div>
     </div>

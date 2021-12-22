@@ -9,12 +9,14 @@ import reporting.Reporting;
 
 @RunWith(Cucumber.class)
 @CucumberOptions 
-(features="E:\\Eclipse\\Cucumber\\src\\test\\resources\\Features\\Adactin.feature", 
+(features="E:\\Eclipse\\Cucumber\\src\\test\\resources\\Features", 
 glue= {"stepdefinitions"},
 monochrome=true,
 tags= {"@E2EBooking"},
+strict=true,
 dryRun=false,
-plugin= {"pretty","json:\\Eclipse\\Cucumber\\src\\test\\resources\\Reports\\Output.json"})
+plugin= {"pretty","json:\\Eclipse\\Cucumber\\src\\test\\resources\\Reports\\Output.json",
+		"rerun:E:\\Eclipse\\Cucumber\\src\\test\\resources\\Re-Run\\failed_scenarios.txt"})
 	
 public class Test_Runner {
 
