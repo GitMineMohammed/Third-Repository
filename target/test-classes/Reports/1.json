@@ -1,0 +1,352 @@
+[
+  {
+    "line": 3,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 1118089,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.before()"
+            }
+          },
+          {
+            "result": {
+              "duration": 15875422505,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.initialization()"
+            }
+          }
+        ],
+        "line": 6,
+        "name": "Verification of Login page",
+        "description": "",
+        "id": "verification-of-adactin-booking1;verification-of-login-page",
+        "after": [
+          {
+            "result": {
+              "duration": 190177,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.after(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 185417491,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User should be in login page",
+            "match": {
+              "location": "Step_Definition_Adactin.user_should_be_in_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5469297005,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User should enter credentials and click Login button",
+            "match": {
+              "location": "Step_Definition_Adactin.user_should_enter_credentials_and_click_Login_button(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "userName",
+                  "MyNewIdForTesting"
+                ]
+              },
+              {
+                "cells": [
+                  "passWord",
+                  "Mohammed@1234"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 189019624,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User should be redirected to Home page",
+            "match": {
+              "location": "Step_Definition_Adactin.user_should_be_redirected_to_Home_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@E2EBooking"
+          },
+          {
+            "name": "@loginPage"
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 101200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.before()"
+            }
+          }
+        ],
+        "line": 14,
+        "name": "Verification of Search Hotel page",
+        "description": "",
+        "id": "verification-of-adactin-booking1;verification-of-search-hotel-page",
+        "after": [
+          {
+            "result": {
+              "duration": 57200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.after(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 216764561,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "User should be in Search Hotel page",
+            "match": {
+              "location": "Step_Definition_Adactin.user_should_be_in_Search_Hotel_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 17124369508,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "User should enter location, hotel, roomType, roomNos, checkIn, checkOut, adultRoom, childRoom and click Search button",
+            "match": {
+              "location": "Step_Definition_Adactin.user_should_enter_location_hotel_roomType_roomNos_checkIn_checkOut_adultRoom_childRoom_and_click_Search_button()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 203829537,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "User should be redirected to Select Hotel Page",
+            "match": {
+              "location": "Step_Definition_Adactin.user_should_be_redirected_to_Select_Hotel_Page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3235486144,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User should select existing hotel and click Continue button",
+            "match": {
+              "location": "Step_Definition_Adactin.user_should_select_existing_hotel_and_click_Continue_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 97498634,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "User should be redirected to Book A Hotel Page",
+            "match": {
+              "location": "Step_Definition_Adactin.user_should_be_redirected_to_Book_A_Hotel_Page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@E2EBooking"
+          },
+          {
+            "name": "@searchHotelPage"
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 48889,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.before()"
+            }
+          }
+        ],
+        "line": 30,
+        "name": "Verification of final Booking page",
+        "description": "",
+        "id": "verification-of-adactin-booking1;verification-of-final-booking-page;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 60623,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.after(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 715080758,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 106658458,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "User should be in final booking page",
+            "match": {
+              "location": "Step_Definition_Adactin.user_should_be_in_final_booking_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 8971606517,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "User should enter \"UserFirstName\",\"UserLastName\",\"UserAddress\",\"1234567890123456\",\"VISA\",\"January\",\"2022\",\"123\" and click Book_Now button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"UserFirstName\"",
+                  "offset": 18
+                },
+                {
+                  "val": "\"UserLastName\"",
+                  "offset": 34
+                },
+                {
+                  "val": "\"UserAddress\"",
+                  "offset": 49
+                },
+                {
+                  "val": "\"1234567890123456\"",
+                  "offset": 63
+                },
+                {
+                  "val": "\"VISA\"",
+                  "offset": 82
+                },
+                {
+                  "val": "\"January\"",
+                  "offset": 89
+                },
+                {
+                  "val": "\"2022\"",
+                  "offset": 99
+                },
+                {
+                  "val": "\"123\"",
+                  "offset": 106
+                }
+              ],
+              "location": "Step_Definition_Adactin.user_should_enter_and_click_Book_Now_button(String,String,String,String,String,String,String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 121441482,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "User should be redirected to Booking Confirmation Page",
+            "match": {
+              "location": "Step_Definition_Adactin.user_should_be_redirected_to_Booking_Confirmation_Page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 88531923,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "User should get OrderId of Booked Hotel",
+            "match": {
+              "location": "Step_Definition_Adactin.user_should_get_OrderId_of_Booked_Hotel()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@E2EBooking"
+          },
+          {
+            "name": "@bookingPage"
+          }
+        ]
+      }
+    ],
+    "name": "Verification of Adactin booking1",
+    "description": "",
+    "id": "verification-of-adactin-booking1",
+    "keyword": "Feature",
+    "uri": "E:/Eclipse/Cucumber/src/test/resources/Features/Adactin_1.feature",
+    "tags": [
+      {
+        "name": "@E2EBooking",
+        "type": "Tag",
+        "location": {
+          "line": 2,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
